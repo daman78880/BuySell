@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="model"
+            type="com.buysell.screens.helpsupport.ViewModelHelpAndSupport" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/viewHelpAndSuppprt"
+    tools:context=".screens.helpsupport.HelpAndSupportFragment">
+
+    <include
+        android:id="@+id/appBarHelpAndSuppprt"
+        layout="@layout/toolbar_layout_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtEmailHelpAndSupport"
+        style="@style/txtStyleNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/topMainMargin"
+        android:fontFamily="@font/inter"
+        android:text="@string/emailTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarHelpAndSuppprt" />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etEmailHelpAndSupport"
+        style="@style/etStyleNormal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/edit_text_round"
+        android:fontFamily="@font/inter_medium"
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress"
+        android:textSize="@dimen/normalTextSize"
+        android:text="@={model.email}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailHelpAndSupport" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtSubjectHelpAndSupport"
+        style="@style/txtStyleNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/topMargin"
+        android:fontFamily="@font/inter"
+        android:text="@string/subject"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailHelpAndSupport" />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etSubjectHelpAndSupport"
+        style="@style/etStyleNormal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/edit_text_round"
+        android:fontFamily="@font/inter_medium"
+        android:hint="@string/enter_subject"
+        android:text="@={model.subject}"
+        android:inputType="text|textCapSentences"
+        android:textSize="@dimen/normalTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSubjectHelpAndSupport" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtDescriptionHelpAndSupport"
+        style="@style/txtStyleNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/topMargin"
+        android:fontFamily="@font/inter"
+        android:text="@string/description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSubjectHelpAndSupport" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etDescriptionHelpAndSupport"
+        style="@style/etStyleNormal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginTop="4dp"
+        android:text="@={model.description}"
+        android:gravity="top"
+        android:background="@drawable/edit_text_round"
+        android:fontFamily="@font/inter_medium"
+        android:hint="@string/type_your_query_here"
+        android:textSize="@dimen/normalTextSize"
+        android:inputType="textMultiLine|textCapSentences"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescriptionHelpAndSupport" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnHelpAndSupport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        style="@style/buttonStyle"
+        android:onClick="@{model::onClick}"
+        android:fontFamily="@font/inter_medium"
+        android:layout_marginBottom="@dimen/mediumBottomMargin"
+        android:background="@drawable/round_sign_up_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

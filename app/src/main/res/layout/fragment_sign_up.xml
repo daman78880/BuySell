@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="model"
+            type="com.buysell.screens.signup.ViewModelSignUp" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.signup.SignUpFragment">
+
+    <include
+        android:id="@+id/appBarSignUp"
+        layout="@layout/toolbar_layout_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarSignUp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/signUpFragmentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTempOneSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/normalStartMagin"
+                android:layout_marginTop="@dimen/topMainMargin"
+                android:text="@string/signUpTxt"
+                android:textSize="@dimen/bigTextSize"
+                android:textAllCaps="false"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/signUpBtnColor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTempTwoSignUp"
+                style="@style/txtStyleNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topMainMargin"
+                android:fontFamily="@font/inter"
+                android:text="@string/name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTempOneSignUp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etFullNameSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topSmallLiteMargin"
+                style="@style/etStyleNormal"
+                android:background="@drawable/edit_text_round"
+                android:inputType="textPersonName|textCapSentences"
+                android:hint="@string/enter_name"
+                android:text="@={model.namee}"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/inter_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTempTwoSignUp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTempThreeSignUp"
+                style="@style/txtStyleNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topMargin"
+                android:fontFamily="@font/inter"
+                android:text="@string/emailTxt"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etFullNameSignUp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etEmailSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_email"
+                android:background="@drawable/edit_text_round"
+                android:layout_marginTop="@dimen/topSmallLiteMargin"
+                style="@style/etStyleNormal"
+                android:textSize="@dimen/normalTextSize"
+                android:text="@={model.emaill}"
+                android:fontFamily="@font/inter_medium"
+                android:inputType="textEmailAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTempThreeSignUp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTempFourSignUp"
+                style="@style/txtStyleNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topMargin"
+                android:fontFamily="@font/inter"
+                android:text="@string/pwdText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etEmailSignUp" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etPwdLayoutSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="41sp"
+                android:theme="@style/TextInputLayoutAppearance"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:inputType="textPassword"
+                app:endIconMode="password_toggle"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:hintEnabled="false"
+                android:padding="0dp"
+                android:background="@drawable/edit_text_round"
+                android:layout_marginTop="@dimen/topSmallLiteMargin"
+                android:layout_marginStart="@dimen/normalStartMagin"
+                android:layout_marginEnd="@dimen/normalEndMagin"
+                app:layout_constraintTop_toBottomOf="@+id/txtTempFourSignUp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPwdSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="0dp"
+                    android:paddingStart="10sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:hint="@string/enter_password"
+                    android:inputType="textPassword"
+                    android:text="@={model.pwdd}"
+                    android:textSize="@dimen/normalTextSize"
+                    android:background="@android:color/transparent"
+                    tools:ignore="RtlSymmetry" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTempFiveSignUp"
+                style="@style/txtStyleNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topMargin"
+                android:fontFamily="@font/inter"
+                android:text="@string/confirmPwd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etPwdLayoutSignUp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etConfirmPwdLayoutSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="41sp"
+                android:theme="@style/TextInputLayoutAppearance"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:inputType="textPassword"
+                app:endIconMode="password_toggle"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:hintEnabled="false"
+                android:padding="0dp"
+                android:background="@drawable/edit_text_round"
+                android:layout_marginTop="@dimen/topSmallLiteMargin"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginEnd="@dimen/_18sdp"
+                app:layout_constraintTop_toBottomOf="@+id/txtTempFiveSignUp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etConfirmPwdSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="0dp"
+                    android:paddingStart="10sp"
+                    android:textSize="@dimen/normalTextSize"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@={model.confirmPwdd}"
+                    android:hint="@string/enter_confirm_password"
+                    android:inputType="textPassword"
+                    android:background="@android:color/transparent"
+
+                    tools:ignore="RtlSymmetry" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSignUpp"
+                style="@style/buttonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top35Margin"
+                android:background="@drawable/round_sign_up_btn"
+                android:text="@string/signUpTxt"
+                android:onClick="@{model::onClick}"
+                android:fontFamily="@font/inter_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etConfirmPwdLayoutSignUp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtSignUpLogin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/signUpTerm"
+                android:textSize="@dimen/normalTextSize"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/liteGreay"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/top12Margin"
+                android:layout_marginStart="@dimen/normalStartMagin"
+                android:layout_marginEnd="@dimen/normalEndMagin"
+                app:layout_constraintTop_toBottomOf="@+id/btnSignUpp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="model"
+            type="com.buysell.screens.location.ViewModelLocation" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewLocationLocation"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".screens.location.LocationFragment">
+
+
+
+        <include
+            android:id="@+id/appBarLocation"
+            layout="@layout/toolbar_layout_one"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTempLocationLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/locationTempOneTxt"
+            style="@style/txtStyle"
+            android:textColor="@color/liteGreay"
+            android:layout_marginTop="@dimen/topMargin"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLocation"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cLayoutLocationLayoutLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/et_filter"
+            android:layout_marginTop="@dimen/topFiveMargin"
+            android:layout_marginStart="@dimen/normalStartMagin"
+            android:layout_marginEnd="@dimen/normalStartMagin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTempLocationLocation"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtLocationLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_9sdp"
+                android:text="@={model.location}"
+                android:textSize="@dimen/normalTextSize"
+                android:fontFamily="@font/inter_medium"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/txtAutoFillLocationLocation"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAutoFillLocationLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="@string/auto_locate"
+                android:textSize="@dimen/normalTextSize"
+                android:gravity="center"
+                android:fontFamily="@font/inter"
+                android:textColor="@color/blue_Txt"
+                app:layout_constraintStart_toEndOf="@+id/txtLocationLocation"
+                android:layout_marginEnd="@dimen/topMargin"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPostLocationLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/post_now"
+            style="@style/buttonStyle"
+            android:fontFamily="@font/inter_medium"
+            android:layout_marginBottom="@dimen/mediumBottomMargin"
+            android:background="@drawable/round_sign_up_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

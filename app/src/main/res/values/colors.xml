@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="shadowColor">#4c4c4c</color>
+    <color name="shadowColorTwo">#f9f9f9</color>
+    <color name="whiteTransparent">#65FFFFFF</color>
+    <color name="signUpBtnColor">#2a2c41</color>
+    <color name="editTxtBoarderColor">#d2d2d3</color>
+    <color name="editTxtBoarderColorTwo">#fafafa</color>
+    <color name="normalGreay">#808080</color>
+    <color name="greayCheckColor">#d9d9d9</color>
+    <color name="bottomNotSelected">#bfbfbf</color>
+    <color name="liteGreay">#7b7f91</color>
+    <color name="liteGreayForEtBackground">#fafafa</color>
+    <color name="red">#fd2929</color>
+    <color name="blue_Txt">#1777f2</color>
+    <color name="viewLine">#f2f2f2</color>
+    <color name="productSubDetailColor">#d7d5d4</color>
+    <color name="greenColor">#28b446</color>
+    <color name="greyColorForDialog">#7f808d</color>
+    <color name="redOne">#ee6060</color>
+    <color name="redTwo">#c33333</color>
+    <color name="blueTakePhotoColor">#1ba3de</color>
+    <color name="liteBluetakePhotoColor">#76c8eb</color>
+    <color name="darkBlue">#00415d</color>
+    <color name="soldColor">#aaabb3</color>
+    <color name="buleChat">#e7f8ff</color>
+
+</resources>

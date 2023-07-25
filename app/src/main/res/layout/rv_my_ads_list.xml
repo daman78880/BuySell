@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/viewMyAds"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_6sdp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgMyAds"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginStart="@dimen/normalStartMagin"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtTitleMyAds"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/viewLineMagin"
+        android:layout_marginTop="@dimen/topFiveMargin"
+        android:layout_marginEnd="@dimen/normalStartMagin"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/temp_name"
+        android:singleLine="true"
+        android:textColor="@color/signUpBtnColor"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgMyAds"
+        app:layout_constraintTop_toTopOf="@+id/imgMyAds" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtAddressMyAds"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/normalStartMagin"
+        android:fontFamily="@font/inter"
+        android:text="@string/temp_name"
+        android:singleLine="true"
+        android:textColor="@color/signUpBtnColor"
+        android:textSize="@dimen/normalTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtTitleMyAds"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleMyAds" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtPriceMyAds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/normalStartMagin"
+        android:background="@drawable/et_round_blue_price"
+        android:fontFamily="@font/inter_medium"
+        android:paddingStart="@dimen/topFiveMargin"
+        android:paddingTop="@dimen/_2sdp"
+        android:paddingEnd="@dimen/topFiveMargin"
+        android:paddingBottom="@dimen/_2sdp"
+        android:text="@string/_1300"
+        android:textColor="@color/white"
+        android:textSize="@dimen/viewLineMagin"
+        app:layout_constraintStart_toStartOf="@+id/txtAddressMyAds"
+        app:layout_constraintBottom_toBottomOf="@+id/imgMyAds"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtTimePostedMyAds"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normalStartMagin"
+        android:layout_marginEnd="@dimen/normalStartMagin"
+        android:fontFamily="@font/inter_light"
+        android:text="@string/_1_min_ago"
+        android:gravity="end"
+        android:singleLine="true"
+        android:textColor="@color/signUpBtnColor"
+        android:textSize="@dimen/_9sdp"
+        app:layout_constraintStart_toEndOf="@+id/txtPriceMyAds"
+        app:layout_constraintBottom_toBottomOf="@+id/txtPriceMyAds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtPriceMyAds" />
+
+    <View
+        android:id="@+id/viewLineMyAds"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/viewLineMagin"
+        android:layout_marginTop="@dimen/topFiveMargin"
+        android:layout_marginEnd="@dimen/viewLineMagin"
+        android:background="@color/viewLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPriceMyAds" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtActivieStatusMyAds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:fontFamily="@font/inter"
+        android:text="@string/active"
+        android:textColor="@color/white"
+        android:textSize="@dimen/normalTextSize"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/imgMyAds"
+        app:layout_constraintEnd_toEndOf="@+id/imgMyAds"
+        app:layout_constraintStart_toStartOf="@+id/imgMyAds" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtSoldStatusMyAds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:fontFamily="@font/inter"
+        android:text="@string/sold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/normalTextSize"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/imgMyAds"
+        app:layout_constraintEnd_toEndOf="@+id/imgMyAds"
+        app:layout_constraintStart_toStartOf="@+id/imgMyAds"
+        app:layout_constraintTop_toTopOf="@+id/imgMyAds" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgOptionOverflowMyAds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/normalStartMagin"
+        android:src="@drawable/option_overflow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

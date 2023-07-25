@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.buysell.screens.welcome.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/welcomeFragment"
+           />
+    </fragment>
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.buysell.screens.login.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/logInFragment"
+            />
+        <action
+            android:id="@+id/action_logInFragment_to_forgotPwdFragment"
+            app:destination="@id/forgotPwdFragment"
+            />
+        <action
+            android:id="@+id/action_logInFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/welcomeFragment"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.buysell.screens.signup.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+
+        <action
+            android:id="@+id/action_signUpFragment_to_logInFragment"
+            app:destination="@id/logInFragment"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.buysell.screens.filter.FilterFragment"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" />
+    <fragment
+        android:id="@+id/forgotPwdFragment"
+        android:name="com.buysell.screens.forgotpwd.ForgotPwdFragment"
+        android:label="fragment_forgot_pwd"
+        tools:layout="@layout/fragment_forgot_pwd" >
+        <action
+            android:id="@+id/action_forgotPwdFragment_to_logInFragment"
+            app:destination="@id/logInFragment"
+            app:popUpTo="@id/logInFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.buysell.screens.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_locationFragment"
+            app:destination="@id/locationFragment"
+           /> <action
+            android:id="@+id/action_homeFragment_to_filterFragment"
+            app:destination="@id/filterFragment"
+           />
+        <action
+            android:id="@+id/action_homeFragment_to_chatUserFragment"
+            app:destination="@id/chatUserFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_homeFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_homeFragment_to_adsFragment"
+            app:destination="@id/adsFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_homeFragment_to_accountFragment"
+            app:destination="@id/accountFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_guestAccountFragment"
+            app:destination="@id/guestAccountFragment"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_browseCategoryResultFragment2"
+            app:destination="@id/browseCategoryResultFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_categoryFragment2"
+            app:destination="@id/categoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatUserFragment"
+        android:name="com.buysell.screens.chatuser.ChatUserFragment"
+        android:label="fragment_chat_user"
+        tools:layout="@layout/fragment_chat_user" />
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.buysell.screens.category.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_commonMobileFormFragment"
+            app:destination="@id/commonMobileFormFragment" />
+        <action
+            android:id="@+id/action_categoryFragment_to_carBikeFormFragment"
+            app:destination="@id/carBikeFormFragment" />
+        <action
+            android:id="@+id/action_categoryFragment_to_browseCategoryResultFragment2"
+            app:destination="@id/browseCategoryResultFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/adsFragment"
+        android:name="com.buysell.screens.myads.AdsFragment"
+        android:label="fragment_ads"
+        tools:layout="@layout/fragment_ads" >
+        <action
+            android:id="@+id/action_adsFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.buysell.screens.account.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_settingFragment"
+            app:destination="@id/settingFragment"
+
+           />
+        <action
+            android:id="@+id/action_accountFragment_to_helpAndSupportFragment"
+            app:destination="@id/helpAndSupportFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.buysell.screens.editprofile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.buysell.screens.setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/navigation"/>
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.buysell.screens.change_pwd.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" />
+    <fragment
+        android:id="@+id/helpAndSupportFragment"
+        android:name="com.buysell.screens.helpsupport.HelpAndSupportFragment"
+        android:label="fragment_help_and_support"
+        tools:layout="@layout/fragment_help_and_support" />
+    <fragment
+        android:id="@+id/guestAccountFragment"
+        android:name="com.buysell.screens.guestaccount.GuestAccountFragment"
+        android:label="fragment_guest_profile"
+        tools:layout="@layout/fragment_guest_profile" >
+        <action
+            android:id="@+id/action_guestAccountFragment_to_helpAndSupportFragment"
+            app:destination="@id/helpAndSupportFragment" />
+        <action
+            android:id="@+id/action_guestAccountFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/navigation"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.buysell.screens.productdetail.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_product_detail" >
+        <action
+            android:id="@+id/action_productDetailFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_productDetailFragment_self"
+            app:destination="@id/productDetailFragment" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_commonMobileFormFragment"
+            app:destination="@id/commonMobileFormFragment" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_carBikeFormFragment"
+            app:destination="@id/carBikeFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.buysell.screens.notification.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.buysell.screens.search_screen.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_searchResultFragment"
+            app:destination="@id/searchResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.buysell.screens.search_result.SearchResultFragment"
+        android:label="fragment_search_result"
+        tools:layout="@layout/fragment_search_result" >
+        <action
+            android:id="@+id/action_searchResultFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commonMobileFormFragment"
+        android:name="com.buysell.screens.common_mobile_form.CommonMobileFormFragment"
+        android:label="fragment_mobile_form"
+        tools:layout="@layout/fragment_mobile_form" >
+        <action
+            android:id="@+id/action_commonMobileFormFragment_to_uploadImageFragment"
+            app:destination="@id/uploadImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carBikeFormFragment"
+        android:name="com.buysell.screens.car_bike_form.CarBikeFormFragment"
+        android:label="fragment_car_bike_form"
+        tools:layout="@layout/fragment_car_bike_form" >
+        <action
+            android:id="@+id/action_carBikeFormFragment_to_uploadImageFragment"
+            app:destination="@id/uploadImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadImageFragment"
+        android:name="com.buysell.screens.upload_image.UploadImageFragment"
+        android:label="fragment_upload_image"
+        tools:layout="@layout/fragment_upload_image" >
+        <action
+            android:id="@+id/action_uploadImageFragment_to_bidFragment"
+            app:destination="@id/bidFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.buysell.screens.location.LocationFragment"
+        android:label="fragment_location"
+        tools:layout="@layout/fragment_location" >
+        <action
+            android:id="@+id/action_locationFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/homeFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/bidFragment"
+        android:name="com.buysell.screens.bid.BidFragment"
+        android:label="fragment_bid"
+        tools:layout="@layout/fragment_bid" >
+        <action
+            android:id="@+id/action_bidFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.buysell.screens.user_profile.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/browseCategoryResultFragment2"
+        android:name="com.buysell.screens.browsecategoryresult.BrowseCategoryResultFragment"
+        android:label="BrowseCategoryResultFragment" >
+        <action
+            android:id="@+id/action_browseCategoryResultFragment2_to_filterFragment"
+            app:destination="@id/filterFragment" />
+        <action
+            android:id="@+id/action_browseCategoryResultFragment2_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+</navigation>

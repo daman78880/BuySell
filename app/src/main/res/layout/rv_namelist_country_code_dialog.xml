@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/topMediumMargin"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtCountryNameCodeDialog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/temp_name"
+        android:fontFamily="@font/inter"
+        android:textSize="@dimen/liteBigTextSize"
+        android:textColor="@color/signUpBtnColor"
+        android:layout_marginStart="@dimen/lowStartMagin"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtCountryCodeDialog"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtCountryCodeDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/temp_name"
+        android:fontFamily="@font/inter"
+        android:textSize="@dimen/liteBigTextSize"
+        android:textColor="@color/signUpBtnColor"
+        android:layout_marginEnd="@dimen/lowStartMagin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtCountryNameCodeDialog"
+        />
+
+    <View
+        android:id="@+id/viewLineEditAccount"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/viewLine"
+        android:layout_marginTop="@dimen/topMediumMargin"
+        app:layout_constraintTop_toBottomOf="@+id/txtCountryCodeDialog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

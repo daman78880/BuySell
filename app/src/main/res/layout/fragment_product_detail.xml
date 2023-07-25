@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="model"
+            type="com.buysell.screens.productdetail.ViewModelProductDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context=".screens.productdetail.ProductDetailFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollViewProductDetail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/cardBottomButtonProductDetails"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewpagerProductDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_220sdp"
+                    android:background="@color/teal_700"
+                    android:orientation="horizontal"
+                    android:scaleType="centerCrop"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgBackProductDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/topMargin"
+                    android:layout_marginTop="@dimen/topMediumMargin"
+                    android:src="@drawable/left_arrow"
+                    android:tint="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cLImgLikeProductDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/topMargin"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:background="@drawable/round_heart_background"
+                    android:padding="@dimen/_3sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    >
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgLikeProductDetail"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:src="@drawable/heart"
+                        android:tint="@color/white"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabDots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_190sdp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/viewpagerProductDetail"
+                    app:tabBackground="@drawable/tab_selector"
+                    app:tabGravity="center"
+                    app:tabIndicator="@null"
+                    app:tabPaddingEnd="5dp"
+                    app:tabPaddingStart="5dp" />
+
+                <LinearLayout
+                    android:id="@+id/cLayoutEyeProductDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_my_ads_tab"
+                    android:padding="@dimen/smallPadding"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/topFiveMargin"
+                    android:layout_marginStart="@dimen/normalStartMagin"
+                    app:layout_constraintTop_toBottomOf="@+id/viewpagerProductDetail"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/cLayoutHeartProductDetail"
+                    >
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgEyeProductDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/eye" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtNoOfPeoperWatchProductDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/signUpBtnColor"
+                        android:textSize="@dimen/normalTextSize"
+                        android:text="105"
+                        android:layout_marginStart="@dimen/topFiveMargin"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/cLayoutHeartProductDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_my_ads_tab"
+                    android:padding="@dimen/smallPadding"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/topFiveMargin"
+                    android:layout_marginEnd="@dimen/normalStartMagin"
+                    app:layout_constraintTop_toBottomOf="@+id/viewpagerProductDetail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cLayoutEyeProductDetail"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgHeartProductDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/heart" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtNoOfLikedCountProductDetail"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:textColor="@color/signUpBtnColor"
+                        android:textSize="@dimen/normalTextSize"
+                        android:text="5"
+                        android:layout_marginStart="@dimen/topFiveMargin"/>
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtTitleProductDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normalStartMagin"
+                    android:layout_marginTop="@dimen/topFiveMargin"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textColor="@color/signUpBtnColor"
+                    android:textSize="@dimen/liteBigTextSize"
+                    android:layout_marginEnd="@dimen/normalStartMagin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cLayoutEyeProductDetail" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtAddressProductDetail"
+                    android:layout_width="0dp"
+                    android:gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normalStartMagin"
+                    android:fontFamily="@font/inter"
+                    android:textColor="@color/signUpBtnColor"
+                    android:textSize="@dimen/textSize"
+
+                    android:layout_marginEnd="@dimen/normalStartMagin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/txtPriceProductList"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTitleProductDetail" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtPriceProductList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/normalStartMagin"
+                    android:background="@drawable/et_round_blue_price"
+                    android:fontFamily="@font/inter_medium"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtTimePostedProductDetail"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtTimePostedProductDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normalStartMagin"
+                    android:fontFamily="@font/inter_light"
+                    android:textColor="@color/signUpBtnColor"
+                    android:textSize="@dimen/smallTextSize"
+                    android:gravity="start"
+                    android:singleLine="true"
+                    app:layout_constraintEnd_toStartOf="@+id/txtPriceProductList"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtAddressProductDetail" />
+
+                <View
+                    android:id="@+id/viewLineTimeProductDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="@dimen/viewLineMagin"
+                    android:layout_marginTop="@dimen/topFiveMargin"
+                    android:layout_marginEnd="@dimen/viewLineMagin"
+                    android:background="@color/viewLine"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTimePostedProductDetail" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cLayoutDetailProductDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewLineTimeProductDetail">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtDetailProductDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/normalStartMagin"
+                        android:layout_marginTop="@dimen/topFiveMargin"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/details"
+                        android:textColor="@color/signUpBtnColor"
+                        android:textSize="@dimen/liteBigTextSize"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTempBrandProductDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/topFiveMargin"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/brand"
+                        android:textColor="@color/signUpBtnColor"
+                        android:textSize="@dimen/textSize"
+                        app:layout_constraintStart_toStartOf="@+id/txtDetailProductDetail"
+                        app:layout_constraintTop_toBottomOf="@+id/txtDetailProductDetail" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtBrandProductDetail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="@dimen/normalStartMagin"
+                        android:fontFamily="@font/inter"
+                        android:textColor="@color/greyColorForDialog"
+                        android:textSize="@dimen/normalTextSize"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:gravity="end"
+                        app:layout_constraintStart_toEndOf="@+id/txtTempBrandProductDetail"
+                        app:layout_constraintTop_toTopOf="@+id/txtTempBrandProductDetail" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTempYearProductDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/year"
+                        android:textColor="@color/signUpBtnColor"
+                        android:textSize="@dimen/textSize"
+                        android:layout_marginTop="@dimen/topFiveMargin"
+                        android:layout_marginStart="0dp"
+                        app:layout_constraintStart_toStartOf="@+id/txtTempBrandProductDetail"
+                        app:layout_constraintTop_toBottomOf="@+id/txtTempBrandProductDetail" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtYearProductDetail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="@dimen/normalStartMagin"
+                        android:fontFamily="@font/inter"
+                        android:textColor="@color/greyColorForDialog"
+                        android:textSize="@dimen/normalTextSize"
+                        android:gravity="end"
+                        app:layout_constraintStart_toEndOf="@+id/txtTempYearProductDetail"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/txtTempYearProductDetail"
+
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTempFuelProductDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/fuel"
+                        android:textColor="@color/signUpBtnColor"
+                        android:textSize="@dimen/textSize"
+                        android:layout_marginTop="@dimen/topFiveMargin"
+                        android:layout_marginStart="0dp"
+                        app:layout_constraintStart_toStartOf="@+id/txtTempYearProductDetail"
+                        app:layout_constraintTop_toBottomOf="@+id/txtTempYearProductDetail"  />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtFuelProductDetail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="@dimen/normalStartMagin"
+                        android:fontFamily="@font/inter"
+                        android:textColor="@color/greyColorForDialog"
+                        android:textSize="@dimen/normalTextSize"
+                        android:gravity="end"
+                        app:layout_constraintStart_toEndOf="@+id/txtTempFuelProductDetail"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/txtTempFuelProductDetail" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTempTransmissionProductDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/transmission"
+                        android:textColor="@color/signUpBtnColor"
+                        android:textSize="@dimen/textSize"
+                        android:layout_marginTop="@dimen/topFiveMargin"
+                        android:layout_marginStart="0dp"
+                        app:layout_constraintStart_toStartOf="@+id/txtTempFuelProductDetail"
+                        app:layout_constraintTop_toBottomOf="@+id/txtTempFuelProductDetail" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTransmissionProductDetail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="@dimen/normalStartMagin"
+                        android:fontFamily="@font/inter"
+                        android:textColor="@color/greyColorForDialog"
+                        android:textSize="@dimen/normalTextSize"
+                        android:gravity="end"
+                        app:layout_constraintStart_toEndOf="@+id/txtTempTransmissionProductDetail"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/txtTempTransmissionProductDetail"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTempKmDriveProductDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/km_driven"
+                        android:textColor="@color/signUpBtnColor"
+                        android:textSize="@dimen/textSize"
+                        android:layout_marginTop="@dimen/topFiveMargin"
+                        android:layout_marginStart="0dp"
+                        app:layout_constraintStart_toStartOf="@+id/txtTempTransmissionProductDetail"
+                        app:layout_constraintTop_toBottomOf="@+id/txtTempTransmissionProductDetail" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtKmDriveProductDetail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="@dimen/normalStartMagin"
+                        android:fontFamily="@font/inter"
+                        android:textColor="@color/greyColorForDialog"
+                        android:textSize="@dimen/normalTextSize"
+                        android:gravity="end"
+                        app:layout_constraintStart_toEndOf="@+id/txtTempKmDriveProductDetail"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/txtTempKmDriveProductDetail"
+
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTempNoOfOwnderProductDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/no_of_owners"
+                        android:textColor="@color/signUpBtnColor"
+                        android:textSize="@dimen/textSize"
+                        android:layout_marginTop="@dimen/topFiveMargin"
+                        android:layout_marginStart="0dp"
+                        app:layout_constraintStart_toStartOf="@+id/txtTempKmDriveProductDetail"
+                        app:layout_constraintTop_toBottomOf="@+id/txtTempKmDriveProductDetail"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtNoOfOwnderProductDetail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="@dimen/normalStartMagin"
+                        android:fontFamily="@font/inter"
+                        android:textColor="@color/greyColorForDialog"
+                        android:textSize="@dimen/normalTextSize"
+                        android:gravity="end"
+                        app:layout_constraintStart_toEndOf="@+id/txtTempNoOfOwnderProductDetail"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/txtTempNoOfOwnderProductDetail"
+                        />
+
+                    <View
+                        android:id="@+id/viewLineTransmissionProductDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/viewLineMagin"
+                        android:layout_marginTop="@dimen/topFiveMargin"
+                        android:layout_marginEnd="@dimen/viewLineMagin"
+                        android:background="@color/viewLine"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtTempNoOfOwnderProductDetail" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtTempDescriptionProductDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normalStartMagin"
+                    android:layout_marginTop="@dimen/topFiveMargin"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/description"
+                    android:textColor="@color/signUpBtnColor"
+                    android:textSize="@dimen/liteBigTextSize"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cLayoutDetailProductDetail" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtDescriptionProductDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normalStartMagin"
+                    android:layout_marginTop="@dimen/topFiveMargin"
+                    android:layout_marginEnd="@dimen/normalStartMagin"
+                    android:fontFamily="@font/inter"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/greyColorForDialog"
+                    android:textSize="@dimen/normalTextSize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/txtTempDescriptionProductDetail"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTempDescriptionProductDetail" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cLayoutUserProfileProductDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDescriptionProductDetail">
+                    <View
+                        android:id="@+id/viewLinetxtDescriptionProductDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/viewLineMagin"
+                        android:layout_marginTop="@dimen/topFiveMargin"
+                        android:layout_marginEnd="@dimen/viewLineMagin"
+                        android:background="@color/viewLine"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgUserImageProductDetail"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginStart="@dimen/normalStartMagin"
+                        android:layout_marginTop="@dimen/topFiveMargin"
+                        android:background="@drawable/user_image_round"
+                        android:clipToOutline="true"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/viewLinetxtDescriptionProductDetail" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtUserNameProductDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/topMargin"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/temp_name"
+                        android:textColor="@color/signUpBtnColor"
+                        android:textSize="@dimen/liteBigTextSize"
+                        app:layout_constraintStart_toEndOf="@+id/imgUserImageProductDetail"
+                        app:layout_constraintTop_toTopOf="@+id/imgUserImageProductDetail" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtUserMemberSinceProductDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/viewLineMagin"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/temp_name"
+                        android:textColor="@color/signUpBtnColor"
+                        android:textSize="@dimen/normalTextSize"
+                        app:layout_constraintStart_toEndOf="@+id/imgUserImageProductDetail"
+                        app:layout_constraintTop_toBottomOf="@+id/txtUserNameProductDetail" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtSeeProfileProductDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/viewLineMagin"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/see_profile"
+                        android:textColor="@color/blue_Txt"
+                        android:textSize="@dimen/smallTextSize"
+                        app:layout_constraintStart_toEndOf="@+id/imgUserImageProductDetail"
+                        app:layout_constraintTop_toBottomOf="@+id/txtUserMemberSinceProductDetail" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/viewLineUserImageProductDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="@dimen/viewLineMagin"
+                    android:layout_marginTop="@dimen/topFiveMargin"
+                    android:layout_marginEnd="@dimen/viewLineMagin"
+                    android:background="@color/viewLine"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cLayoutUserProfileProductDetail" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtTempAddPostAtProductDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normalStartMagin"
+                    android:layout_marginTop="@dimen/topMargin"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/ad_posted_at"
+                    android:textColor="@color/signUpBtnColor"
+                    android:textSize="@dimen/liteBigTextSize"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewLineUserImageProductDetails" />
+
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/container"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_190sdp"
+                    android:nestedScrollingEnabled="true"
+                    android:layout_marginStart="@dimen/lowStartMagin"
+                    android:layout_marginTop="@dimen/topFiveMargin"
+                    android:layout_marginEnd="@dimen/lowStartMagin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTempAddPostAtProductDetail"
+                    />
+
+                <View
+                    android:id="@+id/viewLineMapProductDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="@dimen/viewLineMagin"
+                    android:layout_marginTop="@dimen/topMargin"
+                    android:layout_marginEnd="@dimen/viewLineMagin"
+                    android:background="@color/viewLine"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/container" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtTempReportThisAdProductDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/topFiveMargin"
+                    android:layout_marginEnd="@dimen/normalStartMagin"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/report_this_ad"
+                    android:textColor="@color/blue_Txt"
+                    android:textSize="@dimen/textSize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewLineMapProductDetails" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cLayoutRelatedAdsProductDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTempReportThisAdProductDetail"
+                    >
+                    <View
+                        android:id="@+id/viewLineReportAdDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/viewLineMagin"
+                        android:layout_marginTop="@dimen/topFiveMargin"
+                        android:layout_marginEnd="@dimen/viewLineMagin"
+                        android:background="@color/viewLine"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTempRelatedAdsProductDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/normalStartMagin"
+                        android:layout_marginTop="@dimen/topMargin"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/related_ads"
+                        android:visibility="gone"
+                        android:textColor="@color/signUpBtnColor"
+                        android:textSize="@dimen/normalTextSize"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/viewLineReportAdDetails" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvRelatedAdsProductDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_marginStart="@dimen/lowStartMagin"
+                        android:layout_marginTop="@dimen/topFiveMargin"
+                        android:layout_marginEnd="@dimen/lowStartMagin"
+                        android:layout_marginBottom="@dimen/topMainMargin"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtTempRelatedAdsProductDetail"
+                        tools:listitem="@layout/prouct_list_home_rv" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardBottomButtonProductDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/cardElevation"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/topFiveMargin"
+                android:layout_marginBottom="@dimen/topMargin"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnAskProductDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_filter"
+                    android:fontFamily="@font/inter_medium"
+                    android:padding="10dp"
+                    android:text="@string/ask"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/normalStartMagin"
+                    android:layout_marginEnd="0dp"
+                    android:textColor="@color/signUpBtnColor"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/normalTextSize"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnMakeOfferProductDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="@drawable/round_sign_up_btn"
+                    android:fontFamily="@font/inter_medium"
+                    android:padding="10dp"
+                    android:textSize="@dimen/normalTextSize"
+                    android:textColor="@color/white"
+                    android:text="@string/make_offer"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/topMainMargin"
+                    android:layout_marginEnd="@dimen/normalStartMagin"
+                    />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

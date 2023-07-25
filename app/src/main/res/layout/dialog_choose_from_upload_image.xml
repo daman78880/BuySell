@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnCancelChooseImageDialog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        style="@style/txtStyle"
+        android:background="@drawable/et_filter"
+        android:padding="@dimen/litePadding"
+         android:layout_marginBottom="@dimen/topFiveMargin"
+        android:textColor="@color/signUpBtnColor"
+        android:textSize="@dimen/normalTextSize"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/lowStartMagin"
+        android:layout_marginEnd="@dimen/lowStartMagin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnSelectPhotoChooseImageDialog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/select_photo"
+        style="@style/txtStyle"
+        android:background="@drawable/et_filter"
+        android:padding="@dimen/litePadding"
+         android:layout_marginBottom="@dimen/topMainMargin"
+        android:textColor="@color/signUpBtnColor"
+        android:textSize="@dimen/normalTextSize"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/lowStartMagin"
+        android:layout_marginEnd="@dimen/lowStartMagin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintBottom_toTopOf="@+id/btnCancelChooseImageDialog"
+        /> <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnTakePhotoChooseImageDialog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/take_photo"
+        style="@style/txtStyle"
+        android:background="@drawable/et_filter"
+        android:padding="@dimen/litePadding"
+         android:layout_marginBottom="@dimen/topFiveMargin"
+        android:textColor="@color/signUpBtnColor"
+        android:textSize="@dimen/normalTextSize"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/lowStartMagin"
+        android:layout_marginEnd="@dimen/lowStartMagin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintBottom_toTopOf="@+id/btnSelectPhotoChooseImageDialog"
+        />
+
+
+
+    
+
+</androidx.constraintlayout.widget.ConstraintLayout>

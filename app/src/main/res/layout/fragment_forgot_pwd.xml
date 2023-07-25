@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="model"
+            type="com.buysell.screens.forgotpwd.ViewModelForgotPassword" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/forgetPwdLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".screens.forgotpwd.ForgotPwdFragment">
+    <include
+        android:id="@+id/appBarForgotPwd"
+        layout="@layout/toolbar_layout_one"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtForgotPwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normalStartMagin"
+        android:layout_marginTop="@dimen/topMainMargin"
+        android:text="@string/forgot_password"
+        android:textSize="@dimen/bigTextSize"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="@color/signUpBtnColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarForgotPwd"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtEmailFgtPwd"
+        style="@style/txtStyleNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/topMainMargin"
+        android:fontFamily="@font/inter"
+        android:text="@string/emailTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtForgotPwd" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etEmailFgtPwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_email"
+        android:background="@drawable/edit_text_round"
+        android:layout_marginTop="@dimen/topSmallLiteMargin"
+        style="@style/etStyleNormal"
+        android:textSize="@dimen/normalTextSize"
+        android:text="@={model.email}"
+        android:fontFamily="@font/inter_medium"
+        android:inputType="textEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailFgtPwd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnVerify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send_verification"
+        style="@style/buttonStyle"
+        android:onClick="@{model::onClick}"
+        android:layout_marginTop="@dimen/top35Margin"
+        android:fontFamily="@font/inter_medium"
+        android:background="@drawable/round_sign_up_btn"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailFgtPwd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

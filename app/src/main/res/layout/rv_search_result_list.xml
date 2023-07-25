@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/viewMyAds"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_6sdp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgSearchResult"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginStart="@dimen/normalStartMagin"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtTitleSearchResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/viewLineMagin"
+        android:layout_marginTop="@dimen/topFiveMargin"
+        android:layout_marginEnd="@dimen/normalStartMagin"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/temp_name"
+        android:singleLine="true"
+        android:textColor="@color/signUpBtnColor"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgSearchResult"
+        app:layout_constraintTop_toTopOf="@+id/imgSearchResult" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtAddressSearchResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/normalStartMagin"
+        android:fontFamily="@font/inter"
+        android:text="@string/temp_name"
+        android:singleLine="true"
+        android:textColor="@color/signUpBtnColor"
+        android:textSize="@dimen/normalTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtTitleSearchResult"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleSearchResult" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtPriceSearchResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/normalStartMagin"
+        android:background="@drawable/et_round_blue_price"
+        android:fontFamily="@font/inter_medium"
+        android:paddingStart="@dimen/topFiveMargin"
+        android:paddingTop="@dimen/_2sdp"
+        android:paddingEnd="@dimen/topFiveMargin"
+        android:paddingBottom="@dimen/_2sdp"
+        android:text="@string/_1300"
+        android:textColor="@color/white"
+        android:textSize="@dimen/viewLineMagin"
+        app:layout_constraintStart_toStartOf="@+id/txtAddressSearchResult"
+        app:layout_constraintBottom_toBottomOf="@+id/imgSearchResult"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtTimePostedSearchResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normalStartMagin"
+        android:layout_marginEnd="@dimen/normalStartMagin"
+        android:fontFamily="@font/inter_light"
+        android:text="@string/_1_min_ago"
+        android:gravity="end"
+        android:singleLine="true"
+        android:textColor="@color/signUpBtnColor"
+        android:textSize="@dimen/_9sdp"
+        app:layout_constraintStart_toEndOf="@+id/txtPriceSearchResult"
+        app:layout_constraintBottom_toBottomOf="@+id/txtPriceSearchResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtPriceSearchResult" />
+
+    <View
+        android:id="@+id/viewLineMyAds"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/viewLineMagin"
+        android:layout_marginTop="@dimen/topFiveMargin"
+        android:layout_marginEnd="@dimen/viewLineMagin"
+        android:background="@color/viewLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPriceSearchResult" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

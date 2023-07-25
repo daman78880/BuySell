@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="model"
+            type="com.buysell.screens.welcome.ViewModelWelcome" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".screens.welcome.WelcomeFragment">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtLoginAsGuestWelcomeScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_as_guest"
+        style="@style/buttonStyle"
+        android:textColor="@color/blueTakePhotoColor"
+        android:padding="0dp"
+        android:fontFamily="@font/inter"
+        android:textSize="@dimen/normalTextSize"
+        android:onClick="@{model::onClick}"
+        android:layout_marginBottom="@dimen/highBottomMargin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSignUpWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_sign_up_btn"
+        style="@style/buttonStyle"
+        android:text="@string/signUpTxt"
+        android:onClick="@{model::onClick}"
+        android:fontFamily="@font/inter_medium"
+        android:layout_marginBottom="@dimen/normalBottomMargin"
+        app:layout_constraintBottom_toTopOf="@+id/txtLoginAsGuestWelcomeScreen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogInWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_sign_up_btn"
+        style="@style/buttonStyle"
+        android:text="@string/logInTxt"
+        android:onClick="@{model::onClick}"
+        android:fontFamily="@font/inter_medium"
+        android:layout_marginBottom="@dimen/liteBottomMargin"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignUpWelcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

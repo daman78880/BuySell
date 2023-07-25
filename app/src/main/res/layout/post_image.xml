@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/iconPostt"
+    android:visibility="visible"
+    android:elevation="@dimen/_15sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.appcompat.widget.AppCompatImageView
+    android:id="@+id/imgPostCircle"
+    android:layout_width="@dimen/_46sdp"
+    android:layout_height="@dimen/_46sdp"
+    android:elevation="@dimen/_20sdp"
+    android:src="@drawable/ic_baseline_circle_24"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgPostAddIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/add_button"
+        android:elevation="@dimen/_25sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

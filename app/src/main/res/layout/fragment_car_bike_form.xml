@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="model"
+            type="com.buysell.screens.common_mobile_form.ViewModelCommonForm" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.car_bike_form.CarBikeFormFragment">
+
+    <include
+        android:id="@+id/appBarCarBikeForm"
+        layout="@layout/toolbar_layout_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarCarBikeForm">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cLayoutCarBikeForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTempBrandCarBikeForm"
+                style="@style/txtStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/inter"
+                android:text="@string/brand"
+                android:textColor="@color/liteGreay"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/etBrandNameCarBikeForm"
+                style="@style/txtStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topSmallLiteMargin"
+                android:background="@drawable/et_filter"
+                android:fontFamily="@font/inter"
+                android:text="@={model.brandName}"
+                android:textColor="@color/liteGreay"
+                android:inputType="textPersonName"
+                android:padding="@dimen/litePadding"
+                android:textSize="@dimen/normalTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTempBrandCarBikeForm" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTempYearCarBikeForm"
+                style="@style/txtStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topMargin"
+                android:fontFamily="@font/inter"
+                android:text="@string/year"
+                android:textColor="@color/liteGreay"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etBrandNameCarBikeForm" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etYearCarBikeForm"
+                style="@style/txtStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topSmallLiteMargin"
+                android:background="@drawable/et_filter"
+                android:hint="@string/year"
+                android:inputType="number"
+                android:padding="@dimen/litePadding"
+                android:textSize="@dimen/normalTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTempYearCarBikeForm" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTempKmDriveCarBikeForm"
+                style="@style/txtStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topMargin"
+                android:text="@string/km_driven"
+                android:textColor="@color/liteGreay"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etYearCarBikeForm" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etKmDriveCarBikeForm"
+                style="@style/txtStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topSmallLiteMargin"
+                android:background="@drawable/et_filter"
+                android:hint="@string/km_driven"
+                android:inputType="number"
+                android:padding="@dimen/litePadding"
+                android:textSize="@dimen/normalTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTempKmDriveCarBikeForm" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTempFuelCarBikeForm"
+                style="@style/txtStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topMargin"
+                android:text="@string/fuel"
+                android:visibility="visible"
+                android:textColor="@color/liteGreay"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etKmDriveCarBikeForm" />
+
+            <HorizontalScrollView
+                android:id="@+id/cLayoutFuelSelectCarBikeForm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topSmallLiteMargin"
+                android:orientation="horizontal"
+                android:scrollbars="none"
+                android:visibility="visible"
+                android:layout_marginEnd="@dimen/normalStartMagin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/txtTempFuelCarBikeForm"
+                app:layout_constraintTop_toBottomOf="@+id/txtTempFuelCarBikeForm">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtCngHyBrideCarBikeForm"
+                        style="@style/txtStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/et_filter"
+                        android:padding="@dimen/litePadding"
+                        android:text="@string/cng_amp_hybrids"
+                        android:textColor="@color/liteGreay"
+                        android:textSize="@dimen/normalTextSize"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="@dimen/viewLineMagin"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/txtDieselCarBikeForm"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtDieselCarBikeForm"
+                        style="@style/txtStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/et_filter"
+                        android:padding="@dimen/litePadding"
+                        android:text="@string/diesel"
+                        android:textColor="@color/liteGreay"
+                        android:textSize="@dimen/normalTextSize"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="@dimen/viewLineMagin"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtCngHyBrideCarBikeForm"
+                        app:layout_constraintEnd_toStartOf="@+id/txtElectricCarBikeForm"
+                        app:layout_constraintStart_toEndOf="@+id/txtCngHyBrideCarBikeForm"
+                        app:layout_constraintTop_toTopOf="@+id/txtCngHyBrideCarBikeForm" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtElectricCarBikeForm"
+                        style="@style/txtStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="@dimen/viewLineMagin"
+                        android:background="@drawable/et_filter"
+                        android:padding="@dimen/litePadding"
+                        android:text="@string/electric"
+                        android:textColor="@color/liteGreay"
+                        android:textSize="@dimen/normalTextSize"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtCngHyBrideCarBikeForm"
+                        app:layout_constraintEnd_toStartOf="@+id/txtPetrolCarBikeForm"
+                        app:layout_constraintStart_toEndOf="@+id/txtDieselCarBikeForm"
+                        app:layout_constraintTop_toTopOf="@+id/txtCngHyBrideCarBikeForm" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtPetrolCarBikeForm"
+                        style="@style/txtStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/et_filter"
+                        android:padding="@dimen/litePadding"
+                        android:text="@string/petrol"
+                        android:layout_marginStart="0dp"
+                        android:textColor="@color/liteGreay"
+                        android:textSize="@dimen/normalTextSize"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtCngHyBrideCarBikeForm"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txtElectricCarBikeForm"
+                        app:layout_constraintTop_toTopOf="@+id/txtCngHyBrideCarBikeForm" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTempTransmissionCarBikeForm"
+                style="@style/txtStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topMargin"
+                android:text="@string/transmission"
+                android:visibility="visible"
+                android:textColor="@color/liteGreay"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cLayoutFuelSelectCarBikeForm" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAutomaticCarBikeForm"
+                style="@style/txtStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="@dimen/topSmallLiteMargin"
+                android:background="@drawable/et_filter"
+                android:padding="@dimen/litePadding"
+                android:visibility="visible"
+                android:text="@string/automatic"
+                android:textColor="@color/liteGreay"
+                android:textSize="@dimen/normalTextSize"
+                app:layout_constraintEnd_toStartOf="@+id/txtManualCarBikeForm"
+                app:layout_constraintStart_toStartOf="@+id/txtTempTransmissionCarBikeForm"
+                app:layout_constraintTop_toBottomOf="@+id/txtTempTransmissionCarBikeForm" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtManualCarBikeForm"
+                style="@style/txtStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/viewLineMagin"
+                android:background="@drawable/et_filter"
+                android:padding="@dimen/litePadding"
+                android:visibility="visible"
+                android:text="@string/manual"
+                android:textColor="@color/liteGreay"
+                android:textSize="@dimen/normalTextSize"
+                app:layout_constraintStart_toEndOf="@+id/txtAutomaticCarBikeForm"
+                app:layout_constraintTop_toTopOf="@+id/txtAutomaticCarBikeForm" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTempNoOfOwnerCarBikeForm"
+                style="@style/txtStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topMargin"
+                android:text="@string/no_of_owners"
+                android:visibility="visible"
+                android:textColor="@color/liteGreay"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAutomaticCarBikeForm" />
+        <HorizontalScrollView
+                android:id="@+id/cLayoutNoOfOwnerCarBikeForm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/txtTempNoOfOwnerCarBikeForm"
+                app:layout_constraintStart_toStartOf="@+id/txtTempNoOfOwnerCarBikeForm"
+                app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtFirstOwnerCarBikeForm"
+                    style="@style/txtStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/topSmallLiteMargin"
+                    android:background="@drawable/et_filter"
+                    android:padding="@dimen/litePadding"
+                    android:text="@string/_1st"
+                    android:textColor="@color/liteGreay"
+                    android:textSize="@dimen/normalTextSize"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="@dimen/viewLineMagin"
+                    app:layout_constraintEnd_toStartOf="@+id/txtSecondOwnerCarBikeForm"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtSecondOwnerCarBikeForm"
+                    style="@style/txtStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_filter"
+                    android:padding="@dimen/litePadding"
+                    android:text="@string/_2nd"
+                    android:textColor="@color/liteGreay"
+                    android:textSize="@dimen/normalTextSize"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="@dimen/viewLineMagin"
+                    app:layout_constraintEnd_toStartOf="@+id/txtThirdwnerCarBikeForm"
+                    app:layout_constraintStart_toEndOf="@+id/txtFirstOwnerCarBikeForm"
+                    app:layout_constraintTop_toTopOf="@+id/txtFirstOwnerCarBikeForm" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtThirdwnerCarBikeForm"
+                    style="@style/txtStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_filter"
+                    android:padding="@dimen/litePadding"
+                    android:text="@string/_3rd"
+                    android:textColor="@color/liteGreay"
+                    android:textSize="@dimen/normalTextSize"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="@dimen/viewLineMagin"
+                    app:layout_constraintEnd_toStartOf="@+id/txtFourthwnerCarBikeForm"
+                    app:layout_constraintStart_toEndOf="@+id/txtSecondOwnerCarBikeForm"
+                    app:layout_constraintTop_toTopOf="@+id/txtFirstOwnerCarBikeForm" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtFourthwnerCarBikeForm"
+                    style="@style/txtStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="@dimen/viewLineMagin"
+                    android:background="@drawable/et_filter"
+                    android:padding="@dimen/litePadding"
+                    android:text="@string/_4th"
+                    android:textColor="@color/liteGreay"
+                    android:textSize="@dimen/normalTextSize"
+                    app:layout_constraintEnd_toStartOf="@+id/txtFourthPluswnerCarBikeForm"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/txtThirdwnerCarBikeForm"
+                    app:layout_constraintTop_toTopOf="@+id/txtFirstOwnerCarBikeForm" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtFourthPluswnerCarBikeForm"
+                    style="@style/txtStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="@dimen/viewLineMagin"
+                    android:background="@drawable/et_filter"
+                    android:padding="@dimen/litePadding"
+                    android:text="@string/_4"
+                    android:textColor="@color/liteGreay"
+                    android:textSize="@dimen/normalTextSize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/txtFourthwnerCarBikeForm"
+                    app:layout_constraintTop_toTopOf="@+id/txtFirstOwnerCarBikeForm" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+</HorizontalScrollView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTempTitleCarBikeForm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/title"
+                android:layout_marginTop="@dimen/topMargin"
+                style="@style/txtStyle"
+                android:textColor="@color/liteGreay"
+                app:layout_constraintTop_toBottomOf="@+id/cLayoutNoOfOwnerCarBikeForm"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etAddTitleCarBikeForm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_filter"
+                style="@style/txtStyle"
+                android:hint="@string/add_title"
+                android:inputType="textPersonName|textCapSentences"
+                android:padding="@dimen/litePadding"
+                android:textSize="@dimen/normalTextSize"
+                android:layout_marginTop="@dimen/topSmallLiteMargin"
+                app:layout_constraintTop_toBottomOf="@+id/txtTempTitleCarBikeForm"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTempDescriptionCarBikeForm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:layout_marginTop="@dimen/topMargin"
+                style="@style/txtStyle"
+                android:textColor="@color/liteGreay"
+                app:layout_constraintTop_toBottomOf="@+id/etAddTitleCarBikeForm"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etAddDescriptionCarBikeForm"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                android:background="@drawable/et_filter"
+                style="@style/txtStyle"
+                android:gravity="top"
+                android:scrollbars="vertical"
+                android:hint="@string/discriptionHint"
+                android:inputType="textMultiLine|textCapSentences"
+                android:padding="@dimen/litePadding"
+                android:textSize="@dimen/normalTextSize"
+                android:layout_marginTop="@dimen/topSmallLiteMargin"
+                app:layout_constraintTop_toBottomOf="@+id/txtTempDescriptionCarBikeForm"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnNextCarBikeForm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/next"
+                style="@style/buttonStyle"
+                android:fontFamily="@font/inter_medium"
+                android:layout_marginBottom="@dimen/mediumBottomMargin"
+                android:layout_marginTop="@dimen/top35Margin"
+                android:background="@drawable/round_sign_up_btn"
+               app:layout_constraintTop_toBottomOf="@+id/etAddDescriptionCarBikeForm"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

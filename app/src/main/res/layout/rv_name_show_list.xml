@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtNameBrandNameShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:textSize="@dimen/liteBigTextSize"
+        android:layout_marginTop="@dimen/topMediumMargin"
+        android:textColor="@color/signUpBtnColor"
+        android:layout_marginStart="@dimen/lowStartMagin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <View
+        android:id="@+id/viewLineBrandNameShow"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/viewLine"
+        android:layout_marginTop="@dimen/topMediumMargin"
+        app:layout_constraintTop_toBottomOf="@+id/txtNameBrandNameShow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

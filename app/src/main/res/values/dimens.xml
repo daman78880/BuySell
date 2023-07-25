@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="top35Margin">@dimen/_35sdp</dimen>
+    <dimen name="top12Margin">@dimen/_12sdp</dimen>
+    <dimen name="top13Margin">@dimen/_13sdp</dimen>
+    <dimen name="topMainMargin">@dimen/_15sdp</dimen>
+    <dimen name="topMargin">@dimen/_10sdp</dimen>
+    <dimen name="topFiveMargin">@dimen/_5sdp</dimen>
+    <dimen name="topSmallLiteMargin">@dimen/_4sdp</dimen>
+    <dimen name="topMediumMargin">@dimen/_8sdp</dimen>
+
+    <dimen name="normalStartMagin">@dimen/_18sdp</dimen>
+    <dimen name="lowStartMagin">@dimen/_6sdp</dimen>
+    <dimen name="mediumStartMagin">@dimen/_8sdp</dimen>
+
+    <dimen name="normalEndMagin">@dimen/_18sdp</dimen>
+    <dimen name="lowEndMagin">@dimen/_6sdp</dimen>
+
+    <dimen name="viewLineMagin">@dimen/_10sdp</dimen>
+
+
+
+    <dimen name="liteBottomMargin">@dimen/_8sdp</dimen>
+    <dimen name="normalBottomMargin">@dimen/_10sdp</dimen>
+    <dimen name="mediumBottomMargin">@dimen/_25sdp</dimen>
+    <dimen name="highBottomMargin">@dimen/_40sdp</dimen>
+
+    <dimen name="smallTextSize">@dimen/_9sdp</dimen>
+    <dimen name="normalTextSize">@dimen/_11sdp</dimen>
+    <dimen name="textSize">@dimen/_10sdp</dimen>
+    <dimen name="liteBigTextSize">@dimen/_13sdp</dimen>
+    <dimen name="bigTextSize">@dimen/_20sdp</dimen>
+
+    <dimen name="normalPadding">@dimen/_10sdp</dimen>
+    <dimen name="litePadding">@dimen/_9sdp</dimen>
+    <dimen name="smallPadding">@dimen/_6sdp</dimen>
+
+    <dimen name="cardElevation">@dimen/_10sdp</dimen>
+
+
+    <dimen name="likeIconSize">@dimen/_16sdp</dimen>
+    <dimen name="likeIconBackGroundPadding">@dimen/_3sdp</dimen>
+    <dimen name="likeIconBrowseSize">@dimen/_14sdp</dimen>
+    <dimen name="likeIconBrowseBackGroundPadding">@dimen/_2sdp</dimen>
+
+
+</resources>

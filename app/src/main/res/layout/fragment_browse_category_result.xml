@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="model"
+            type="com.buysell.screens.browsecategoryresult.ViewModelBrowseCategoryResult" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.browsecategoryresult.BrowseCategoryResultFragment">
+
+    <include layout="@layout/toolbar_home"
+        android:id="@+id/appBarBrowseCategoryResult"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cLSearchBrowseCategoryResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/et_filter"
+        android:layout_marginTop="@dimen/topMainMargin"
+        android:layout_marginStart="@dimen/lowStartMagin"
+        android:layout_marginEnd="@dimen/lowStartMagin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarBrowseCategoryResult"
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgTempSearchBrowseCategoryResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:src="@drawable/ic_baseline_search_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/txtTempSearchBrowseCategoryResult"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_9sdp"
+            android:hint="@string/search"
+            android:singleLine="true"
+            android:textSize="@dimen/normalTextSize"
+            android:textColor="@color/liteGreay"
+            android:fontFamily="@font/inter_medium"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgTempSearchBrowseCategoryResult"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBrowseCategoryResult"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        tools:listitem="@layout/rv_user_profile_list"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginTop="@dimen/topMargin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cLSearchBrowseCategoryResult"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

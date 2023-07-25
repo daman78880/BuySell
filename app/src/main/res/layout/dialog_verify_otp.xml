@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardOtpDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_7sdp"
+        app:cardMaxElevation="@dimen/_18sdp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTitleOtpDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topMainMargin"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/one_time_password"
+                android:textColor="@color/signUpBtnColor"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etFirstOtpDilog"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_37sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/et_filter"
+                android:gravity="center"
+
+                android:hint="@string/dash"
+                android:inputType="number"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:maxLength="1"
+                android:textColorHint="@color/signUpBtnColor"
+                app:layout_constraintEnd_toStartOf="@+id/etSecondOtpDilog"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitleOtpDialog" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etSecondOtpDilog"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_37sdp"
+                android:background="@drawable/et_filter"
+                android:gravity="center"
+                android:hint="@string/dash"
+                android:inputType="number"
+                android:maxLength="1"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:textColorHint="@color/signUpBtnColor"
+                app:layout_constraintBottom_toBottomOf="@+id/etFirstOtpDilog"
+                app:layout_constraintEnd_toStartOf="@+id/etThirdOtpDilog"
+                app:layout_constraintStart_toEndOf="@+id/etFirstOtpDilog"
+                app:layout_constraintTop_toTopOf="@+id/etFirstOtpDilog" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etThirdOtpDilog"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_37sdp"
+                android:background="@drawable/et_filter"
+                android:gravity="center"
+                android:hint="@string/dash"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColorHint="@color/signUpBtnColor"
+                app:layout_constraintBottom_toBottomOf="@+id/etFirstOtpDilog"
+                app:layout_constraintEnd_toStartOf="@+id/etFourOtpDilog"
+                app:layout_constraintStart_toEndOf="@+id/etSecondOtpDilog"
+                app:layout_constraintTop_toTopOf="@+id/etFirstOtpDilog" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etFourOtpDilog"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_37sdp"
+                android:background="@drawable/et_filter"
+                android:gravity="center"
+                android:hint="@string/dash"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColorHint="@color/signUpBtnColor"
+                app:layout_constraintBottom_toBottomOf="@+id/etFirstOtpDilog"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/etThirdOtpDilog"
+                app:layout_constraintTop_toTopOf="@+id/etFirstOtpDilog" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtSubTitleOtpDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/topMargin"
+                android:layout_marginEnd="@dimen/_40sdp"
+                android:fontFamily="@font/inter_light"
+                android:gravity="center"
+                android:text="@string/otpDialogMsg"
+                android:textColor="@color/signUpBtnColor"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etFirstOtpDilog" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnVerifyOtpDialog"
+                style="@style/buttonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                android:background="@drawable/round_sign_up_btn"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/verifty"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtSubTitleOtpDialog" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtResendOtpDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/topMargin"
+                android:layout_marginBottom="@dimen/topMainMargin"
+                android:fontFamily="@font/inter"
+                android:text="@string/resend_otp"
+                android:textColor="@color/signUpBtnColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnVerifyOtpDialog" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnCancelOtpDialog"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:src="@drawable/ic_baseline_clear_24"
+        android:layout_marginBottom="@dimen/_250sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardOtpDialog"
+        app:layout_constraintEnd_toEndOf="@+id/cardOtpDialog" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
